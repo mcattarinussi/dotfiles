@@ -10,4 +10,4 @@ Inspired by:
 
 - Install [xcode](https://developer.apple.com/xcode/) from the App Store (or using the cli: `xcode-select --install`)
 - Clone this repository
-- Run `sh install.sh`
+- Run `sh install.sh` (must be run from the root folder of this repo)
