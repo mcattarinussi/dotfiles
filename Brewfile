@@ -28,6 +28,7 @@ brew "yarn"
 brew "zsh"
 cask "bettertouchtool"
 
+cask "1password"
 cask "clipy"
 cask "dash"
 cask "docker"
