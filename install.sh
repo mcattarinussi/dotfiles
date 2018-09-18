@@ -26,5 +26,9 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 # Load iTerm2 DynamicProfiles
 # TODO: find a way to automatically set as the default profile
-rm $HOME/Library/Application\ Support/iTerm2/DynamicProfiles/iterm2Profiles.json
+rm -f $HOME/Library/Application\ Support/iTerm2/DynamicProfiles/iterm2Profiles.json
 ln -s $DOTFILES_DIR/iterm2Profiles.json $HOME/Library/Application\ Support/iTerm2/DynamicProfiles/
+
+# VSCode
+rm -f $HOME/Library/Application\ Support/Code/User/settings.json
+ln -s $DOTFILES_DIR/vscode_user_settings.json $HOME/Library/Application\ Support/Code/User/settings.json
