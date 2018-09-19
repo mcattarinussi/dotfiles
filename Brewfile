@@ -29,6 +29,7 @@ brew "zsh"
 cask "bettertouchtool"
 
 cask "1password"
+cask "aws-vault"
 cask "clipy"
 cask "dash"
 cask "docker"

@@ -32,3 +32,7 @@ ln -s $DOTFILES_DIR/iterm2Profiles.json $HOME/Library/Application\ Support/iTerm
 # VSCode
 rm -f $HOME/Library/Application\ Support/Code/User/settings.json
 ln -s $DOTFILES_DIR/vscode_user_settings.json $HOME/Library/Application\ Support/Code/User/settings.json
+
+# Overriding the aws CLI to use aws-vault
+# https://github.com/99designs/aws-vault/blob/master/USAGE.md#overriding-the-aws-cli-to-use-aws-vault
+mkdir -p $HOME/.aws/custom && rm -f $HOME/.aws/custom/aws && ln -s $DOTFILES_DIR/aws.sh $HOME/.aws/custom/aws
