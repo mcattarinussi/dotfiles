@@ -128,8 +128,3 @@ if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
 fi
 export GPG_TTY=$(tty)
 gpg-connect-agent -q updatestartuptty /bye >/dev/null
-
-### AWS ###
-# Overriding the aws CLI to use aws-vault
-# https://github.com/99designs/aws-vault/blob/master/USAGE.md#overriding-the-aws-cli-to-use-aws-vault
-export PATH="$HOME/.aws/custom:$PATH"
