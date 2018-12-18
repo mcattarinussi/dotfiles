@@ -1,36 +1,46 @@
 {
-    "window.zoomLevel": 1,
-    "workbench.iconTheme": "material-icon-theme",
+  "window.zoomLevel": 0,
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.insertSpaces": true,
+  "terminal.integrated.shell.osx": "zsh",
+  // Python
+  "[python]": {
+    "editor.tabSize": 4,
+    "linting.flake8Enabled": true,
+    "linting.mypyEnabled": true,
+    "linting.pylintEnabled": false,
+    "unitTest.pyTestEnabled": true
+  },
+  "[javascript]": {
+    "editor.tabSize": 4,
     "editor.insertSpaces": true,
-    "terminal.integrated.shell.osx": "zsh",
-    // Python
-    "[python]": {
-        "editor.tabSize": 4
-    },
-    "python.linting.flake8Enabled": true,
-    "python.linting.mypyEnabled": true,
-    "python.linting.pylintEnabled": false,
-    "python.unitTest.pyTestEnabled": true,
-    "[javascript]": {
-        "editor.tabSize": 2,
-        "editor.insertSpaces": true
-    },
-    // js prettier
-    "prettier.singleQuote": true,
-    "prettier.eslintIntegration": true,
-    "editor.detectIndentation": true,
-    "workbench.startupEditor": "newUntitledFile",
-    "explorer.confirmDragAndDrop": false,
-    "explorer.confirmDelete": false,
-    // go
-    "[go]": {
-        "editor.formatOnSave": true,
-        "autocompleteUnimportedPackages": true
-    },
-    "workbench.colorTheme": "Atom One Light",
-    "workbench.colorCustomizations": {
-        "editor.background": "#FFFFFF"
-    },
-    "editor.multiCursorModifier": "ctrlCmd",
-    "editor.minimap.enabled": false,
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": true
+  },
+  // js prettier
+  "prettier.singleQuote": true,
+  "prettier.eslintIntegration": true,
+  "prettier.tslintIntegration": true,
+  "editor.detectIndentation": true,
+  "workbench.startupEditor": "newUntitledFile",
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  // go
+  "[go]": {
+    "editor.formatOnSave": true,
+    "autocompleteUnimportedPackages": true
+  },
+  "workbench.colorTheme": "Atom One Light",
+  "workbench.colorCustomizations": {
+    "editor.background": "#FFFFFF"
+  },
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.minimap.enabled": false,
+  "search.location": "panel",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "breadcrumbs.enabled": true
 }
