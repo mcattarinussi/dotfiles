@@ -29,10 +29,5 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 rm -f $HOME/Library/Application\ Support/iTerm2/DynamicProfiles/iterm2Profiles.json
 ln -s $DOTFILES_DIR/iterm2Profiles.json $HOME/Library/Application\ Support/iTerm2/DynamicProfiles/
 
-# VSCode
-rm -f $HOME/Library/Application\ Support/Code/User/settings.json
-ln -s $DOTFILES_DIR/vscode_user_settings.json $HOME/Library/Application\ Support/Code/User/settings.json
-
-# Overriding the aws CLI to use aws-vault
-# https://github.com/99designs/aws-vault/blob/master/USAGE.md#overriding-the-aws-cli-to-use-aws-vault
-mkdir -p $HOME/.aws/custom && rm -f $HOME/.aws/custom/aws && ln -s $DOTFILES_DIR/aws.sh $HOME/.aws/custom/aws
+# VSCode sync extension
+code --install-extension Shan.code-settings-sync
