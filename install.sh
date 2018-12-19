@@ -11,8 +11,12 @@ brew bundle
 DOTFILES_DIR=$PWD/dotfiles
 
 # Setup zsh and oh-my-zsh
-if [ $SHELL != $(which zsh) ]; then
-  chsh -s $(which zsh)
+ZSH_PATH=$(which zsh)
+if ! grep -q $ZSH_PATH '/etc/shells'; then
+  echo $ZSH_PATH | sudo tee -a /etc/shells
+fi
+if [ $SHELL != $ZSH_PATH ]; then
+  chsh -s $ZSH_PATH
 fi
 # Remove existing oh-my-zsh installation
 rm -rf $HOME/.oh-my-zsh
