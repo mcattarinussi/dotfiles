@@ -20,8 +20,8 @@ if [ $SHELL != $ZSH_PATH ]; then
 fi
 # Remove existing oh-my-zsh installation
 rm -rf $HOME/.oh-my-zsh
-# Workaround to avoid running zsh after installation of oh-my-zsh. Check https://github.com/robbyrussell/oh-my-zsh/pull/5893
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sed 's:env zsh -l::g' | sed 's:chsh -s .*$::g')"
+# Install oh-my-zsh (CHSH=no and RUNZSH=no prevents this script to run zsh when it finishes)
+RUNZSH=no CHSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 rm -f $HOME/.zshrc $HOME/.zshrc.pre-oh-my-zsh
 ln -s $DOTFILES_DIR/.zshrc $HOME/.zshrc
 # TODO: improve plugin installation
