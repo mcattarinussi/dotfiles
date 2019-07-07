@@ -16,4 +16,3 @@ Inspired by:
 - Logout and login again to see the shell configuration updated
 - Setup vscode sync token as described [here](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)
 - Setup gpg and ssh (follow [this guide](https://gist.github.com/mcattarinussi/834fc4b641ff4572018d0c665e5a94d3#setup-the-gpg-agent-for-ssh-authentication))
-- Copy aws credentials backup in ~/.aws
