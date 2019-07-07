@@ -1,0 +1,87 @@
+#!/usr/bin/env bash
+
+# Close any open System Preferences panes, to prevent them from overriding
+# settings we’re about to change
+osascript -e 'tell application "System Preferences" to quit'
+
+
+###############################################################################
+# Dock                                                                        #
+###############################################################################
+
+# Dock icon size 36px
+defaults write com.apple.dock tilesize -int 36
+
+# Minimize windows into their application’s icon
+defaults write com.apple.dock minimize-to-application -bool true
+
+# Enable spring loading for all Dock items
+defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
+
+# Disable indicator lights for open applications in the Dock
+defaults write com.apple.dock show-process-indicators -bool false
+
+# Wipe all (default) app icons from the Dock
+defaults write com.apple.dock persistent-apps -array
+
+# Show only open applications in the Dock
+defaults write com.apple.dock static-only -bool true
+
+# Don’t show recent applications in Dock
+defaults write com.apple.dock show-recents -bool false
+
+# Don’t animate opening applications from the Dock
+defaults write com.apple.dock launchanim -bool false
+
+# Automatically hide and show the Dock
+defaults write com.apple.dock autohide -bool true
+
+# Delay Dock appearance
+defaults write com.apple.dock autohide-delay -float 0.1
+
+# Hide Dock immediately
+defaults write com.apple.dock autohide-time-modifier -float 0
+
+
+###############################################################################
+# Finder                                                                      #
+###############################################################################
+
+# Show hidden files by default
+defaults write com.apple.finder AppleShowAllFiles -bool true
+
+# Show all filename extensions
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+
+###############################################################################
+# Other                                                                       #
+###############################################################################
+
+# Avoid creating .DS_Store files on network or USB volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
+# Hide icons for hard drives, servers, and removable media on the desktop
+defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
+defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
+defaults write com.apple.finder ShowMountedServersOnDesktop -bool false
+defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
+
+# Prevent Photos from opening automatically when devices are plugged in
+defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
+
+
+###############################################################################
+# Restart affected apps                                                       #
+###############################################################################
+
+for app in
+    "Dock" \
+	"Finder" \
+	"Photos" \
+    ; do
+	killall "${app}" &> /dev/null
+done
+
+echo 'Settings updated!'
