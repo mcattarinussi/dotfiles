@@ -97,16 +97,28 @@ source $ZSH/oh-my-zsh.sh
 
 ### ZSH plugins configuration ###
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=250'
+#### This speeds up pasting w/ autosuggest ####
+#### https://github.com/zsh-users/zsh-autosuggestions/issues/238 ####
+pasteinit() {
+  OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
+  zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
+}
+pastefinish() {
+  zle -N self-insert $OLD_SELF_INSERT
+}
+zstyle :bracketed-paste-magic paste-init pasteinit
+zstyle :bracketed-paste-magic paste-finish pastefinish
 
 ### Custom ###
 export PATH="/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH"
 export EDITOR="code -w"
 
 ### Python ###
-export PYENV_ROOT=/usr/local/Cellar/pyenv
-export PATH="$PYENV_ROOT/bin:$PYENV_ROOT/completions/pyenv.zsh:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+if command -v pyenv 1>/dev/null 2>&1; then
+  export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+fi
 
 ### Node ###
 # use home folder to install node versions using n (https://github.com/tj/n)
