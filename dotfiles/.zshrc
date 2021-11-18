@@ -116,6 +116,7 @@ export EDITOR="code -w"
 ### Python ###
 if command -v pyenv 1>/dev/null 2>&1; then
   export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+  eval "$(pyenv init --path)"
   eval "$(pyenv init -)"
   eval "$(pyenv virtualenv-init -)"
 fi
